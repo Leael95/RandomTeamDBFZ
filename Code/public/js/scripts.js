@@ -1,9 +1,24 @@
 const characters = ["Android 16", "Android 17", "Android 18", "Android 21", "Bardock", "Beerus", "Broly Z", "Broly Super", "Captain Ginyu", "Cell", "Cooler", "Frieza" , "Gogeta Blue", "Gogeta SSJ4", "Teen Gohan", "Adult Gohan", "Goku Base", "Goku SSJ", "Goku Blue", "Goku UI", "Goku GT", "Goku Black", "Gotenks", "Hit", "Janemba", "Jiren", "Kefla", "Kid Buu", "Krilin", "Majin Buu", "Master Roshi", "Nappa", "Piccolo", "Super Baby 2", "Tien", "Trunks", "Vegeta Base", "Vegeta SSJ", "Vegeta Blue", "Vegito", "Videl", "Yamcha", "Zamasu"]
 
 function randomTeam() {
-    let character1 = Math.floor(Math.random() * 43) + 1;
-    let character2 = Math.floor(Math.random() * 43) + 1;
-    let character3 = Math.floor(Math.random() * 43) + 1;
+
+    var character1 = Math.floor(Math.random() * 43) + 1;
+
+    var character2 = Math.floor(Math.random() * 43) + 1;
+
+    var character3 = Math.floor(Math.random() * 43) + 1;
+
+    while(character1 == character2) {
+        character2 = Math.floor(Math.random() * 43) + 1;
+    }
+
+    while(character1 == character3) {
+        character3 = Math.floor(Math.random() * 43) + 1;
+    }
+
+    while(character2 == character3) {
+        character3 = Math.floor(Math.random() * 43) + 1;
+    }
 
     let assist1 = Math.floor(Math.random() * 3) + 1;
     let assist2 = Math.floor(Math.random() * 3) + 1;
@@ -36,14 +51,19 @@ function setCharacter(character, id, idImg) {
         document.getElementById(idImg).src = "img/5.png"
     } else if(character == 6) {
         document.getElementById(id).innerHTML = characters[5];
+        document.getElementById(idImg).src = "img/6.png"
     } else if(character == 7) {
         document.getElementById(id).innerHTML = characters[6];
+        document.getElementById(idImg).src = "img/7.png"
     } else if(character == 8) {
         document.getElementById(id).innerHTML = characters[7];
+        document.getElementById(idImg).src = "img/8.png"
     } else if(character == 9) {
         document.getElementById(id).innerHTML = characters[8];
+        document.getElementById(idImg).src = "img/9.png"
     } else if(character == 10) {
         document.getElementById(id).innerHTML = characters[9];
+        document.getElementById(idImg).src = "img/10.png"
     } else if(character == 11) {
         document.getElementById(id).innerHTML = characters[10];
     } else if(character == 12) {
