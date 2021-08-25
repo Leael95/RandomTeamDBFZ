@@ -4,27 +4,27 @@ randomTeam();
 
 function randomTeam() {
 
-    var character1 = Math.floor(Math.random() * 43) + 1;
+    var character1 = Math.floor(Math.random() * characters.length);
 
-    var character2 = Math.floor(Math.random() * 43) + 1;
+    var character2 = Math.floor(Math.random() * characters.length);
 
-    var character3 = Math.floor(Math.random() * 43) + 1;
+    var character3 = Math.floor(Math.random() * characters.length);
 
     while(character1 == character2) {
-        character2 = Math.floor(Math.random() * 43) + 1;
+        character2 = Math.floor(Math.random() * characters.length);
     }
 
     while(character1 == character3) {
-        character3 = Math.floor(Math.random() * 43) + 1;
+        character3 = Math.floor(Math.random() * characters.length);
     }
 
     while(character2 == character3) {
-        character3 = Math.floor(Math.random() * 43) + 1;
+        character3 = Math.floor(Math.random() * characters.length);
     }
 
-    let assist1 = Math.floor(Math.random() * 3) + 1;
-    let assist2 = Math.floor(Math.random() * 3) + 1;
-    let assist3 = Math.floor(Math.random() * 3) + 1;
+    let assist1 = Math.floor(Math.random() * 3);
+    let assist2 = Math.floor(Math.random() * 3);
+    let assist3 = Math.floor(Math.random() * 3);
 
     setCharacter(character1, "char1", "charImg1");
     setCharacter(character2, "char2", "charImg2");
@@ -36,25 +36,42 @@ function randomTeam() {
 }
 
 function setCharacter(character,id,idImg) {
-    document.getElementById(id).innerHTML = characters[character - 1];
-    document.getElementById(idImg).src = `img/${character}.png`;
+    document.getElementById(id).innerHTML = characters[character];
+    document.getElementById(idImg).src = `img/${characters[character]}.png`;
 }
 
 function setAssist(assist, id) {
-    if(assist == 1) {
+    if(assist == 0) {
         document.getElementById(id).innerHTML = "Assist A"
         document.getElementById(id).style.color = "red";
         document.getElementById(id).classList.remove("blue");
         document.getElementById(id).classList.remove("green");
-    } else if(assist == 2) {
+    } else if(assist == 1) {
         document.getElementById(id).innerHTML = "Assist B"
         document.getElementById(id).style.color = "blue";
         document.getElementById(id).classList.remove("red");
         document.getElementById(id).classList.remove("green");
-    } else if(assist == 3) {
+    } else if(assist == 2) {
         document.getElementById(id).innerHTML = "Assist C"
         document.getElementById(id).style.color = "green";
         document.getElementById(id).classList.remove("blue");
         document.getElementById(id).classList.remove("red");
     }
+}
+
+function removeChar(character) {
+    const charToDelete = characters.indexOf(character);
+
+    if(charToDelete >= 0) {
+        console.log(charToDelete);
+        console.log(characters.length);
+        characters.splice(charToDelete, 1);
+        console.log(characters.length);
+    } else {
+        alert("ERROR, no se puede sacar 2 veces un mismo personaje");
+    }
+}
+
+function addChar(character) {
+    characters.push(character);
 }
