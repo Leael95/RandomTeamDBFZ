@@ -17,9 +17,11 @@ function randomTeam() {
     }
 
     while(character3 == character1 || character3 == character2) {
-        console.log("Segundo While antes del efecto" + character1 + " " + character2);
+        console.log("Segundo While antes del efecto" + character1 + " " + character3);
+        console.log("Segundo While antes del efecto" + character2 + " " + character3);
         character3 = Math.floor(Math.random() * characters.length);
-        console.log("Segundo While despues del efecto" + character1 + " " + character2);
+        console.log("Segundo While despues del efecto" + character1 + " " + character3);
+        console.log("Segundo While despues del efecto" + character2 + " " + character3);
     }
 
     if(character1 == character2 || character2 == character3 || character3 == character1) {
@@ -122,4 +124,14 @@ function addOrRemoveChar(checkbox) {
     }
 
     console.log(max3Chars + "La variable Max3CharsB");
+}
+
+for(i = 0; i < 43; i++) {
+    document.getElementById("checkChars").innerHTML += `<label><input id="cbox${i}"  name="cbox${i}" type="checkbox" class="form-check-input form-style ms-3" value="${characters[i]}" checked onclick="addOrRemoveChar(this.id)"> ${characters[i]}</label>`
+}
+
+function uncheckCheckBox() {
+    for(i = 3; i < 43; i++){
+        document.getElementById(`cbox${i}`).checked = false;
+    }
 }
