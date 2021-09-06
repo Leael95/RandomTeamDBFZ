@@ -4,14 +4,7 @@ html {
 }
 
 body {  
-    background: rgb(187,0,0);
-    background: linear-gradient(180deg, rgba(187,0,0,1) 0%, rgba(0,0,0,1) 100%);
-}
-
-@media (max-width: 575px) {
-    body {
-        background: rgb(187,0,0);
-    }
+    background-image: url(../img/Background.png);
 }
 
 h1 {
@@ -38,4 +31,41 @@ outline: none;
 background-position: right center; /* change the direction of the change here */
 color: #fff;
 text-decoration: none;
+}
+
+.btn-grad2 {background-image: linear-gradient(to right, #409fc5 0%, rgb(176, 204, 218) 51%, #00b7ff 100%)}
+.btn-grad2 {
+margin: 10px;
+padding: 15px 45px;
+text-align: center;
+text-transform: uppercase;
+transition: 0.5s;
+background-size: 200% auto;
+color: white;
+box-shadow: 0 0 20px black;
+border-radius: 10px;
+display: block;
+outline: none;
+}
+
+.btn-grad2:hover {
+background-position: right center; /* change the direction of the change here */
+color: #fff;
+text-decoration: none;
+}
+
+.logoDBFZ {
+    width: 250px;
+}
+
+.formCheckBox {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+}
+
+.form-style {
+    background-color: red!important;
+    border: none;
 }

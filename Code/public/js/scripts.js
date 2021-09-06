@@ -4,22 +4,26 @@ randomTeam();
 
 function randomTeam() {
 
-    var character1 = Math.floor(Math.random() * characters.length);
+    let character1 = Math.floor(Math.random() * characters.length);
 
-    var character2 = Math.floor(Math.random() * characters.length);
+    let character2 = Math.floor(Math.random() * characters.length);
 
-    var character3 = Math.floor(Math.random() * characters.length);
+    let character3 = Math.floor(Math.random() * characters.length);
 
     while(character1 == character2) {
+        console.log("Primer While antes del efecto" + character1 + " " + character2);
         character2 = Math.floor(Math.random() * characters.length);
+        console.log("Primer While despues del efecto" + character1 + " " + character2);
     }
 
-    while(character1 == character3) {
+    while(character3 == character1 || character3 == character2) {
+        console.log("Segundo While antes del efecto" + character1 + " " + character2);
         character3 = Math.floor(Math.random() * characters.length);
+        console.log("Segundo While despues del efecto" + character1 + " " + character2);
     }
 
-    while(character2 == character3) {
-        character3 = Math.floor(Math.random() * characters.length);
+    if(character1 == character2 || character2 == character3 || character3 == character1) {
+        alert("Si te salio este mensaje por favor comentamelo a twitter @ResetLea porque no tendria que pasar :v");
     }
 
     let assist1 = Math.floor(Math.random() * 3);
@@ -74,4 +78,48 @@ function removeChar(character) {
 
 function addChar(character) {
     characters.push(character);
+}
+
+let parImpar = 0;
+
+document.getElementById("btnEdit").addEventListener("click", function() {
+    // document.getElementById("cards").classList.add("d-none");
+
+    if(parImpar%2 == 0) {
+        document.getElementById("checkChars").classList.remove("d-none");
+        document.getElementById("checkChars").classList.add("d-block");
+        parImpar++;
+    } else {
+        document.getElementById("checkChars").classList.remove("d-block");
+        document.getElementById("checkChars").classList.add("d-none");
+        parImpar++;
+    }
+  });
+
+  let max3Chars = characters.length;
+
+function addOrRemoveChar(checkbox) {
+    char = document.getElementById(checkbox);
+    console.log(max3Chars + " La variable Max3Chars");
+
+    if(max3Chars > 3) {
+        if(char.checked == true) {
+            addChar(char.value);
+            console.log("Añadimos " + char.value);
+            max3Chars++;
+        } else {
+            removeChar(char.value);
+            console.log("Removemos " + char.value);
+            max3Chars--;
+        }
+    } else if(char.checked == true) {
+        addChar(char.value);
+        console.log("Añadimos " + char.value);
+        max3Chars++;
+    } else {
+        alert("No se puede tener menos de 3 personajes")
+        char.checked = true;
+    }
+
+    console.log(max3Chars + "La variable Max3CharsB");
 }

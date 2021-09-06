@@ -9,10 +9,12 @@
     <title>DBFZ Team Generator</title>
   </head>
   <body>
+
     <h1 class="text-center text-light">Random Team Generator DBFZ</h1>
 
     <div class="container">
-      <div class="card-group">
+
+      <div id="cards" class="card-group">
 
         <div class="card m-1 p-1">
           <img id="charImg1" class="card-img-top" alt="...">
@@ -44,11 +46,61 @@
 
       <div class="d-flex justify-content-center">
         <input type="button" class="btn-grad fw-bold" value="randomize" onclick="randomTeam()">
+        <input id="btnEdit" type="button" class="btn-grad2 fw-bold" value="edit">
       </div>
 
+      <form id="checkChars" class="d-none fw-bold formCheckBox" action="">
+        <label><input id="cbox0"  name="cbox0"   type="checkbox" class="form-check-input form-style" value="Android 16" checked onclick="addOrRemoveChar(this.id)"> Android 16</label>
+        <label><input id="cbox1"  name="cbox1"   type="checkbox" class="form-check-input form-style" value="Android 17" checked onclick="addOrRemoveChar(this.id)"> Android 17</label>
+        <label><input id="cbox2"  name="cbox2"   type="checkbox" class="form-check-input form-style" value="Android 18" checked onclick="addOrRemoveChar(this.id)"> Android 18</label>
+        <label><input id="cbox3"  name="cbox3"   type="checkbox" class="form-check-input form-style" value="Android 21" checked onclick="addOrRemoveChar(this.id)"> Android 21</label>
+        <label><input id="cbox4"  name="cbox4"   type="checkbox" class="form-check-input form-style" value="Bardock" checked onclick="addOrRemoveChar(this.id)"> Bardock</label>
+        <label><input id="cbox5"  name="cbox5"   type="checkbox" class="form-check-input form-style" value="Beerus" checked onclick="addOrRemoveChar(this.id)"> Beerus</label>
+        <label><input id="cbox6"  name="cbox6"   type="checkbox" class="form-check-input form-style" value="Broly Z" checked onclick="addOrRemoveChar(this.id)"> Broly Z</label>
+        <label><input id="cbox7"  name="cbox7"   type="checkbox" class="form-check-input form-style" value="DBS Broly" checked onclick="addOrRemoveChar(this.id)"> DBS Broly</label>
+        <label><input id="cbox8"  name="cbox8"   type="checkbox" class="form-check-input form-style" value="Captain Ginyu" checked onclick="addOrRemoveChar(this.id)"> Captain Ginyu</label>
+        <label><input id="cbox9"  name="cbox9"   type="checkbox" class="form-check-input form-style" value="Cell" checked onclick="addOrRemoveChar(this.id)"> Cell</label>
+        <label><input id="cbox10" name="cbox10"  type="checkbox" class="form-check-input form-style" value="Cooler" checked onclick="addOrRemoveChar(this.id)"> Cooler</label>
+        <label><input id="cbox11" name="cbox11"  type="checkbox" class="form-check-input form-style" value="Frieza" checked onclick="addOrRemoveChar(this.id)"> Frieza</label>
+        <label><input id="cbox12" name="cbox12"  type="checkbox" class="form-check-input form-style" value="SSGSS Gogeta" checked onclick="addOrRemoveChar(this.id)"> SSGSS Gogeta</label>
+        <label><input id="cbox13" name="cbox13"  type="checkbox" class="form-check-input form-style" value="SSJ4 Gogeta" checked onclick="addOrRemoveChar(this.id)"> SSJ4 Gogeta</label>
+        <label><input id="cbox14" name="cbox14"  type="checkbox" class="form-check-input form-style" value="Teen Gohan" checked onclick="addOrRemoveChar(this.id)"> Teen Gohan</label>
+        <label><input id="cbox15" name="cbox15"  type="checkbox" class="form-check-input form-style" value="Adult Gohan" checked onclick="addOrRemoveChar(this.id)"> Adult Gohan</label>
+        <label><input id="cbox16" name="cbox16"  type="checkbox" class="form-check-input form-style" value="Goku" checked onclick="addOrRemoveChar(this.id)"> Goku</label>
+        <label><input id="cbox17" name="cbox17"  type="checkbox" class="form-check-input form-style" value="SSJ Goku" checked onclick="addOrRemoveChar(this.id)"> SSJ Goku</label>
+        <label><input id="cbox18" name="cbox18"  type="checkbox" class="form-check-input form-style" value="SSGSS Goku" checked onclick="addOrRemoveChar(this.id)"> SSGSS Goku</label>
+        <label><input id="cbox19" name="cbox19"  type="checkbox" class="form-check-input form-style" value="UI Goku" checked onclick="addOrRemoveChar(this.id)"> UI Goku</label>
+        <label><input id="cbox20" name="cbox20"  type="checkbox" class="form-check-input form-style" value="GT Goku" checked onclick="addOrRemoveChar(this.id)"> GT Goku</label>
+        <label><input id="cbox21" name="cbox21"  type="checkbox" class="form-check-input form-style" value="Goku Black" checked onclick="addOrRemoveChar(this.id)"> Goku Black</label>
+        <label><input id="cbox22" name="cbox22"  type="checkbox" class="form-check-input form-style" value="Gotenks" checked onclick="addOrRemoveChar(this.id)"> Gotenks</label>
+        <label><input id="cbox23" name="cbox23"  type="checkbox" class="form-check-input form-style" value="Hit" checked onclick="addOrRemoveChar(this.id)"> Hit</label>
+        <label><input id="cbox24" name="cbox24"  type="checkbox" class="form-check-input form-style" value="Janemba" checked onclick="addOrRemoveChar(this.id)"> Janemba</label>
+        <label><input id="cbox25" name="cbox25"  type="checkbox" class="form-check-input form-style" value="Jiren" checked onclick="addOrRemoveChar(this.id)"> Jiren</label>
+        <label><input id="cbox26" name="cbox26"  type="checkbox" class="form-check-input form-style" value="Kefla" checked onclick="addOrRemoveChar(this.id)"> Kefla</label>
+        <label><input id="cbox27" name="cbox27"  type="checkbox" class="form-check-input form-style" value="Kid Buu" checked onclick="addOrRemoveChar(this.id)"> Kid Buu</label>
+        <label><input id="cbox28" name="cbox28"  type="checkbox" class="form-check-input form-style" value="Krilin" checked onclick="addOrRemoveChar(this.id)"> Krilin</label>
+        <label><input id="cbox29" name="cbox29"  type="checkbox" class="form-check-input form-style" value="Majin Buu" checked onclick="addOrRemoveChar(this.id)"> Majin Buu</label>
+        <label><input id="cbox30" name="cbox30"  type="checkbox" class="form-check-input form-style" value="Master Roshi" checked onclick="addOrRemoveChar(this.id)"> Master Roshi</label>
+        <label><input id="cbox31" name="cbox31"  type="checkbox" class="form-check-input form-style" value="Nappa" checked onclick="addOrRemoveChar(this.id)"> Nappa</label>
+        <label><input id="cbox32" name="cbox32"  type="checkbox" class="form-check-input form-style" value="Piccolo" checked onclick="addOrRemoveChar(this.id)"> Piccolo</label>
+        <label><input id="cbox33" name="cbox33"  type="checkbox" class="form-check-input form-style" value="Super Baby 2" checked onclick="addOrRemoveChar(this.id)"> Super Baby 2</label>
+        <label><input id="cbox34" name="cbox34"  type="checkbox" class="form-check-input form-style" value="Tien" checked onclick="addOrRemoveChar(this.id)"> Tien</label>
+        <label><input id="cbox35" name="cbox35"  type="checkbox" class="form-check-input form-style" value="Trunks" checked onclick="addOrRemoveChar(this.id)"> Trunks</label>
+        <label><input id="cbox36" name="cbox36"  type="checkbox" class="form-check-input form-style" value="Vegeta" checked onclick="addOrRemoveChar(this.id)"> Vegeta</label>
+        <label><input id="cbox37" name="cbox37"  type="checkbox" class="form-check-input form-style" value="SSJ Vegeta" checked onclick="addOrRemoveChar(this.id)"> SSJ Vegeta</label>
+        <label><input id="cbox38" name="cbox38"  type="checkbox" class="form-check-input form-style" value="SSGSS Vegeta" checked onclick="addOrRemoveChar(this.id)"> SSGSS Vegeta</label>
+        <label><input id="cbox39" name="cbox39"  type="checkbox" class="form-check-input form-style" value="Vegito" checked onclick="addOrRemoveChar(this.id)"> Vegito</label>
+        <label><input id="cbox40" name="cbox40"  type="checkbox" class="form-check-input form-style" value="Videl" checked onclick="addOrRemoveChar(this.id)"> Videl</label>
+        <label><input id="cbox41" name="cbox41"  type="checkbox" class="form-check-input form-style" value="Yamcha" checked onclick="addOrRemoveChar(this.id)"> Yamcha</label>
+        <label><input id="cbox42" name="cbox42"  type="checkbox" class="form-check-input form-style" value="Zamasu" checked onclick="addOrRemoveChar(this.id)"> Zamasu</label>
+      </form>
+
+      
+
       <div class="d-flex justify-content-center">
-        <img src="img/LogoDBFZ.png" alt="Logo DBFZ">
+        <img class="logoDBFZ" src="img/LogoDBFZ.png" alt="Logo DBFZ">
       </div>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
